@@ -1,0 +1,9 @@
+| Extensión                 | Función                                                                    |
+| ------------------------- | -------------------------------------------------------------------------- |
+| **Python** (de Microsoft) | Soporte completo para Python (autocompletado, linting, debug, etc.)        |
+| **Pylance**               | Motor de análisis rápido y preciso para Python                             |
+| **Code Runner**           | Permite ejecutar fragmentos de código fácilmente sin necesidad de terminal |
+| **Live Share**            | Para trabajar en pareja o en grupo remotamente                             |
+| **Better Comments**       | Mejora la visibilidad de los comentarios importantes                       |
+| **indent-rainbow**        | Colorea la indentación, muy útil para enseñar bloques en Python            |
+
