@@ -1,0 +1,3 @@
+Juan, 20, Ingeniería
+Ana, 22, Medicina
+David, 28, Ingenieria

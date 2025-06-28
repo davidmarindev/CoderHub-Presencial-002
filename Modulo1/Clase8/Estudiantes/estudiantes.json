@@ -1,0 +1,7 @@
+[
+  {"nombre": "Alice", "edad": 20, "carrera": "A"},
+  {"nombre": "Bob", "edad": 22, "carrera": "B"},
+  {"nombre": "Charlie", "edad": 21, "carrera": "C"},
+  {"nombre": "David", "edad": 23, "carrera": "A"},
+  {"nombre": "Eve", "edad": 20, "carrera": "B"}
+]
