@@ -1,0 +1,7 @@
+[
+  {"nombre": "Alice", "edad": 20, "ci": "111", "active": true},
+  {"nombre": "Bob", "edad": 22, "ci": "123", "active": false},
+  {"nombre": "Charlie", "edad": 21, "ci": "145", "active": true},
+  {"nombre": "David", "edad": 23, "ci": "453", "active": false},
+  {"nombre": "Eve", "edad": 20, "ci": "345", "active": true}
+]
