@@ -1,0 +1,34 @@
+# 🐍 Ignorar entorno virtual
+venv/
+bin/
+include/
+lib/
+pyvenv.cfg
+
+# 🐍 Ignorar archivos de caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# 🐍 Ignorar archivos de entorno y configuración personal
+.env
+*.env
+
+# 🚫 Archivos temporales de sistema
+.DS_Store
+Thumbs.db
+
+# 🧠 Archivos del editor
+.vscode/
+.idea/
+
+# 🧪 Archivos de pruebas (si usas pytest)
+.cache/
+.pytest_cache/
+
+# 📦 Paquetes de distribución (si se llegara a empaquetar)
+dist/
+build/
+*.egg-info/

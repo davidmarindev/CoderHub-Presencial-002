@@ -1,0 +1,19 @@
+{
+  "bot": {
+    "prompt": "Actúa como un experto en desarrollo web con experiencia en Python, JavaScript y SQL. Explica cada tema con claridad, precisión y paso a paso, usando ejemplos sencillos. Ayuda a estudiantes y principiantes a entender los conceptos desde lo básico."
+  },
+  "cursos": [
+    {
+      "id": 1,
+      "nombre": "Fundamentos de Programación y Desarrollo Web",
+      "descripcion": "Aprende desde cero lógica, Python, HTML, CSS y Javascript.",
+      "precio": "$160 (en 4 cuotas)"
+    },
+    {
+      "id": 2,
+      "nombre": "Desarrollo Web Avanzado",
+      "descripcion": "React, APIs, backend, SQL avanzado y herramientas modernas.",
+      "precio": "$200 (en 4 cuotas)"
+    }
+  ]
+}

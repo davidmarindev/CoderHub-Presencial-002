@@ -1,0 +1,34 @@
+# 🧱 PASOS PARA EJECUTAR EL PROYECTO
+
+# 1. Clonar o crear el proyecto en tu carpeta de trabajo
+
+# 2. Crear un entorno virtual
+#    python -m venv venv
+#    source venv/bin/activate  (Linux/macOS)
+#    venv\Scripts\activate     (Windows)
+
+# 3. Instalar las dependencias con:
+#    pip install -r requirements.txt
+
+# 4. Crear un archivo .env con tu clave de OpenAI:
+#    Se necesita de momento para probar el API de Pago de OpenAI, De conseguir una alternativa gratuita estare actualizando. 
+#    OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxx
+
+# 5. Ejecutar el bot:
+#    python chatbot.py
+
+# 6. Usar ngrok para exponer el puerto:
+#    1. https://ngrok.com/ -> Crear cuenta y configurar
+#    2. Levantar puerto con el comando -> ngrok http 8080 (Se debe levantar en el mismo puerto que el servidor de Python)
+
+# 7. Copiar la URL pública de ngrok en Twilio:
+#    1. Crar cuenta en twilio.com y configurar Sandbox para WhatsApp -> Messaging -> Sandbox
+#    2. Configurar numero de prueba en tu WhatsApp(Seguir las instrucciones de twilio)
+#    3. Copiar la url que te da ngrok en https://dashboard.twilio.com > Sandbox > "When a message comes in"
+
+# 8. Probar desde WhatsApp escribiendo "Hola" al número de Twilio
+
+# ========================================================
+# DEPENDENCIAS DEL PROYECTO
+openai
+python-dotenv
