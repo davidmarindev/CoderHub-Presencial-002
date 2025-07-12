@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clientes</title></head>
+<body>
+<h2>Clientes</h2>
+<form method="post" action="/clientes/agregar">
+    Nombre: <input type="text" name="nombre"><br>
+    Email: <input type="email" name="email"><br>
+    <button type="submit">Agregar cliente</button>
+</form>
+<ul>
+{% for c in clientes %}
+    <li>{{ c.nombre }} - {{ c.email }}</li>
+{% endfor %}
+</ul>
+<a href="/">Volver al inicio</a>
+</body>
+</html>

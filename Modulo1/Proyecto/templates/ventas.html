@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ventas</title></head>
+<body>
+<h2>Registrar Venta</h2>
+<form method="post" action="/ventas/agregar">
+    <label for="producto">Producto</label>
+    <select name="producto" required>
+        {% for p in productos %}
+            <option value="{{ p.nombre }}">{{ p.nombre }}</option>
+        {% endfor %}
+    </select>
+    <label for="cliente">Cliente</label>
+    <select name="cliente">
+        {% for c in clientes %}
+            <option value="{{ c.nombre }}">{{ c.nombre }}</option>
+        {% endfor %}
+    </select>
+    <label for="cantidad">Cantidad</label>
+    <input type="number" name="cantidad"><br>
+    <button type="submit">Registrar venta</button>
+</form>
+<h3>Ventas registradas</h3>
+
+<ul>
+{% for v in ventas %}
+    <li>{{ v.cantidad }} x {{ v.producto }} a {{ v.cliente }}</li>
+{% endfor %}
+</ul>
+<h3>Importar Ventas desde Excel</h3>
+<form method="post" action="/ventas/importar" enctype="multipart/form-data">
+    <input type="file" name="excel_file" accept=".xlsx,.xls">
+    <button type="submit">Importar</button>
+</form>
+<h3>Exportar Ventas</h3>
+<a href="/ventas/exportar">Exportar a Excel</a><br>
+<a href="/">Volver al inicio</a>
+</body>
+</html>
