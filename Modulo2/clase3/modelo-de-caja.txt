@@ -1,0 +1,19 @@
+En CSS, todo elemento visual se representa como una caja rectangular compuesta
+por cuatro capas concéntricas. Entender qué hace cada capa y cómo interactúa 
+con las demás es esencial para controlar márgenes, alineación y 
+dimensiones de cualquier diseño web.
+
+Contenido: El área interna donde vive la información.
+Padding: 	Relleno interno que empuja el contenido alejándolo del borde.
+Borde: Línea que envuelve contenido + padding; afecta el tamaño total de la caja.
+Margen: Espacio externo que separa la caja de sus vecinas; no tiene color ni fondo.
+
+Piensa en un regalo envuelto:
+
+El contenido es el objeto.
+
+El padding es el papel burbuja que protege.
+
+El border es la caja de cartón.
+
+El margen es el espacio libre en la camioneta de reparto para que la caja no choque con otra.

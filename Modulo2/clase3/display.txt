@@ -1,0 +1,28 @@
+El display es la propiedad que define cómo cada elemento genera su caja (box) en el flujo del documento y cuál es el contexto de formato que crea a su alrededor.
+Piensa en él como el “modo de comportamiento” del elemento:
+
+Exterior (outer display) – Dicta si la caja se comporta como un bloque que se apila verticalmente o como una línea que fluye con el texto.
+
+Interior (inner display) – Dicta el modelo de diseño que aplicará a sus hijos (flujo normal, tabla, flexbox, grid…).
+
+Para principiantes conviene dominar primero los modos exteriores básicos—inline, block, inline-block—antes de pasar a flex y grid, porque estas bases explican por qué un elemento ocupa (o no) todo el ancho, 
+respeta (o no) width/height, y genera (o no) salto de línea.
+
+Lista de valores de display
+
+block	
+
+Caja de bloque: ocupa 100 % del ancho disponible; respeta width/height; provoca salto de línea antes y después.
+
+inline	
+
+Caja en línea: fluye junto al texto; ignora width/height; solo padding/margen horizontal afecta flujo.
+
+inline-block	
+
+Mezcla ambos: se comporta como inline (fluye) pero respeta width/height como bloque.
+
+none
+
+Elimina la caja del renderizado (ni ocupa espacio ni es accesible).
+

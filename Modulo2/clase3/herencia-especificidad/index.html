@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Herencia y especificidad</title>
+</head>
+<style>
+  html {
+    font-family: Arial, sans-serif;
+    color: red;
+  }
+
+  body {
+    color: black;
+  }
+
+  p {
+    color: gray;
+  }
+
+  .contenedor-parrafos {
+    color: blue;
+  }
+
+  #parrafo1 {
+    color: black;
+  }
+
+  .parrafo1-0 {
+    color: green;
+  }
+
+  .contenedor-parrafos span {
+    color: orange;
+  }
+
+  /* .title h2{
+    color: blue !important;
+  } */
+
+  .contenedor-parrafos h2 {
+    color: hotpink !important;
+  }
+
+</style>
+<body>
+  <h1>Herencia y especificidad</h1>
+  <div class="contenedor-parrafos">
+    <h2 class="title" style="color: green;">Parrafos: </h2>
+    <p style="color: brown;" id="parrafo1" class="parrafo1-0">Esto es un parrafo</p>
+    <span>Esto es un span dentro de un parrafo</span>
+    <p>Otro parrafo</p>
+  </div>
+  <div>
+    <h2>Otro subtitulo</h2>
+  </div>
+</body>
+</html>

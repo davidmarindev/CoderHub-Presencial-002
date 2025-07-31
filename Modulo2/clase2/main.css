@@ -1,0 +1,72 @@
+/* Selectores de clase  */
+
+.prueba {
+  font-size: 15px;
+}
+
+.subtitulo {
+  color: aqua;
+}
+
+.btn {
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+/* Selectores de tipo etiqueta */
+
+ul {
+  list-style-type: square;
+  color: yellow;
+}
+
+/* Selectores de ID */
+
+#tabla_elementos {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tabla_elementos th, #tabla_elementos td {
+  border: 1px solid aquamarine;
+  padding: 8px;
+  text-align: left;
+}
+
+#botones {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#botones .span-container {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 10px;
+}
+
+#botones span {
+  margin-right: 10px;
+}
+
+#botones button {
+  width: 150px;
+}
+
+/* Selectores de atributo */
+
+a[href="https://gsap.com/"] {
+  color: green;
+  text-decoration: none;
+}
+
+a[class~="anchor"] {
+  color: orange;
+  text-decoration: underline;
+}

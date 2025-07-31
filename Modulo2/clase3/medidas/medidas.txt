@@ -1,0 +1,22 @@
+Medidas
+  - Relativas
+  - Absolutas
+
+Unidades de medida
+
+  Absolutas
+
+  - cm 
+  - mm
+  - in
+  - px
+  - pt
+  - pc
+
+  Relativas
+
+  - em - hace referencia a elemento y hereda el tamaño de su antecesor mas proximo
+  - rem - Al tamaño de fuente del elemento raíz (<html>)
+  - vw - viewport width
+  - vh - viewport heigth
+  - % - Porcentaje

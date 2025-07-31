@@ -1,0 +1,15 @@
+Especificidad en Selectores
+- Importancia
+- Especificidad
+- Orden de las fuentes
+
+- Si dos selectores tienen la misma importancia, se toma en cuenta la especificidad
+- Si dos selectores tienen la misma importancia y especificidad, se toma en cuenta el orden de las fuentes
+
+Rangos de importancia de selector
+
+- !important
+- Inline
+- ID
+- Clase
+- Elemento
