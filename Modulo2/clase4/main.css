@@ -1,0 +1,19 @@
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: lightblue;
+  width: 100%;
+  height: 100vh;
+  border: solid 2px black;
+  position: relative;
+}
+
+.box {
+  background-color: yellow;
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+}

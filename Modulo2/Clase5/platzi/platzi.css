@@ -1,0 +1,83 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+body {
+  margin: 0;
+  font-size: 1rem;
+  background: #12181C;
+  background: linear-gradient(53deg,rgba(18, 24, 28, 1) 0%, rgba(17, 33, 32, 1) 49%, rgba(12, 42, 32, 1) 100%);
+}
+
+header {
+  background-color: #13161c;
+}
+
+.navigation {
+  display: flex;
+  padding: 1rem;
+  margin: 0 7rem;
+}
+
+.logo-search {
+  display: flex;
+  align-items: center;
+}
+
+.logo-search img {
+  width: 4.5rem;
+  margin-right: 1rem;
+}
+
+.logo-search input {
+    align-items: center;
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid #2d323a;
+    display: flex;
+    height: 2.5rem;
+    color: white;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.menu button {
+  background-color: #12161b;
+  color: white;
+  border: solid 1px #0ae98a;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.main-container {
+  color: white;
+}
+
+.hero {
+  color: white;
+  margin: 5rem 20rem;
+  text-align: center;
+  padding: 0 2rem;
+}
+.hero h1 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  font-weight: 500; 
+}
+.hero span {
+  color: #10b981
+}

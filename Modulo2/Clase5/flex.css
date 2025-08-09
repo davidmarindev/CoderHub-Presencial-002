@@ -1,0 +1,37 @@
+.container {
+  background-color: darkgrey;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  background-color: rgb(2 195 244);
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+/* every box */
+.box:nth-child(even) {
+  background-color: red;
+}
+
+/* .box:nth-child(1) {
+  background-color: red;
+  flex: 3;
+}
+
+.box:nth-child(2) {
+  background-color: green;
+  flex: 1;
+}
+
+.box:nth-child(3) {
+  background-color: blue;
+  flex: 1;
+} */

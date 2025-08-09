@@ -1,0 +1,10 @@
+## Documentacion
+
+https://developer.mozilla.org/es/docs/Web/CSS/position
+
+- Posiciones en CSS
+
+- absolute
+- relative
+- fixed
+- sticky
