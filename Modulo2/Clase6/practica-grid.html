@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica Grid</title>
+</head>
+<style>
+  .grid-container {
+    color: white;
+    display: grid;
+    background-color: blue;
+    grid-template-columns: 1fr 1fr; /* Tres columnas de igual tamaño */
+    grid-template-rows: 1fr 1fr; /* Dos filas de igual tamaño */
+    grid-auto-rows: 30vh;
+  }
+
+  .grid-item-1 {
+    background-color: lightblue;
+    padding: 20px;
+    grid-column: 1 / 4;
+  }
+
+  .grid-item-2 {
+    background-color: rgb(144, 21, 21);
+    padding: 20px;
+  }
+
+  .grid-item-3 {
+    background-color: rgb(13, 24, 3);
+    padding: 20px;
+  }
+</style>
+<body>
+  <section>
+    <div class="grid-container">
+      <div class="grid-item-1">item 1</div>
+      <div class="grid-item-2">item 2</div>
+      <div class="grid-item-3">item 3</div>
+    </div>
+  </section>
+</body>
+</html>

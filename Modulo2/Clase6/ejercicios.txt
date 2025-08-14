@@ -1,0 +1,21 @@
+Ejercicio 1: Flexbox - Menú Horizontal
+Crea un menú de navegación horizontal con 5 elementos centrados y espaciados uniformemente.
+Usa Flexbox para alinear los elementos.
+Cambia el color de fondo al pasar el mouse por cada elemento.
+
+Ejercicio 2: Flexbox - Tarjetas Responsivas
+Diseña una sección con 3 tarjetas alineadas horizontalmente.
+Usa Flexbox para distribuirlas.
+
+
+Ejercicio 3: Grid - Galería de Imágenes
+Crea una galería de 6 imágenes usando CSS Grid.
+La galería debe tener 3 columnas y 2 filas.
+Las imágenes deben tener un pequeño espacio entre ellas.
+
+Ejercicio 4: Grid - Layout de Página
+Construye un layout de página con Grid:
+Header arriba (1 columna, 1 fila).
+Sidebar a la izquierda (1 columna, 2 filas).
+Main content a la derecha del sidebar (2 columnas, 2 filas).
+Footer abajo (3 columnas, 1 fila).

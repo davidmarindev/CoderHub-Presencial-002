@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grilla de Gatos</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px;
+    padding: 1px;
+  }
+
+  .grid-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: 200px;
+    display: block;
+  }
+</style>
+<body>
+  <section>
+    <div class="grid-container">
+      <div class="grid-item"><img src="https://http.cat/images/100.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/200.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/201.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/300.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/301.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/302.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/401.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/402.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/403.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/404.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/422.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/500.jpg" alt=""></div>
+      <div class="grid-item"><img src="https://http.cat/images/502.jpg" alt=""></div>
+    </div>
+  </section>
+</body>
+</html>
