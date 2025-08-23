@@ -1,0 +1,39 @@
+Responsive Design:
+
+Documentación: https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Responsive_Design
+
+El diseño responsivo es un enfoque de desarrollo web que crea sitios web que se ajustan 
+automáticamente a diferentes tamaños de pantalla y capacidades de dispositivos, garantizando
+una experiencia de visualización consistente y óptima en todos los dispositivos. Utiliza 
+cuadrículas flexibles, imágenes y consultas de medios CSS para adaptar el diseño, el 
+contenido y la funcionalidad al dispositivo del usuario, ya sea una computadora de escritorio, 
+una tableta o un teléfono inteligente.
+
+Media Queries
+
+Las media queries (consulta de medios) en CSS te dan una forma de aplicar CSS solo cuando el 
+navegador y el entorno del dispositivo coinciden con una regla que especifiques.
+
+Documentación: https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Media_queries
+
+Ejemplos:
+
+@media screen and (width: 600px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media (orientation: landscape) {
+  body {
+    color: blue;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  /* … */
+}
+
+Breakpoints
+
+https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica Responsive</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 20px;
+    color: #4CAF50;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+
+  .box {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    flex: 1;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 48rem) {
+    h1 {
+      font-size: 24px;
+      color: white;
+    }
+    body {
+      background-color: blue;
+    }
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .box {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+</style>
+<body>
+  <h1>Practica Responsive</h1>
+
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+</body>
+</html>

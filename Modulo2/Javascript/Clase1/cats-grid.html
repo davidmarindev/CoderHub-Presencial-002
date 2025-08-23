@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grilla de Gatos</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px;
+    padding: 1px;
+  }
+
+  .grid-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: 200px;
+    display: block;
+  }
+</style>
+<body>
+  <section>
+    <div class="grid-container">
+    </div>
+  </section>
+</body>
+<script>
+  var base_url = "https://http.cat/images/";
+  var status_codes = ["100", "200", "201", "300", "301", "302", "401", "402", "403", "404", "422", "500", "502"];
+
+  // status_codes.forEach(function(status_code) {
+  //   var img = document.createElement("img");
+  //   img.src = base_url + status_code + ".jpg";
+  //   img.alt = "Cat " + status_code;
+  //   document.querySelector(".grid-container").appendChild(img);
+  // });
+
+  for(i = 0; i < status_codes.length; i++) {
+    var img = document.createElement("img");
+    img.src = base_url + status_codes[i] + ".jpg";
+    img.alt = "Cat " + status_codes[i];
+    var div = document.createElement("div");
+    div.className = "grid-item";
+    div.appendChild(img);
+    document.querySelector(".grid-container").appendChild(div);
+  }
+
+  // var a = prompt("Dime un código de estado HTTP:");
+
+</script>
+</html>
