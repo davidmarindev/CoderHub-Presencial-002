@@ -163,7 +163,7 @@ estudiantes.forEach((element) => {
   }
 });
 
-var estudiantesAprobados = estudiantes.filter((element) => element.nota > 10);
+var estudiantesAprobados = estudiantes.filter((element) => element.nota >= 10);
 
 console.log(estudiantesAprobados);
 
