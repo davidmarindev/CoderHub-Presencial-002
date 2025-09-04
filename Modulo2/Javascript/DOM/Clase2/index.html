@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Academia CoderHub — Inscripción</title>
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81'
+              }
+            },
+            boxShadow: {
+              soft: '0 10px 25px -10px rgba(0,0,0,0.25)'
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* Fuente del sistema para mayor rendimiento */
+      html { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    </style>
+  </head>
+
+  <body class="h-full bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:supports-[backdrop-filter]:bg-slate-950/70 dark:bg-slate-950/90 border-b border-slate-200/70 dark:border-slate-800">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <a href="#" class="font-semibold tracking-tight"><img id="main-logo" src="./assets/logo-light.png" alt="logo" class="h-10 w-15"/></a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-brand-600 dark:hover:text-brand-400" href="#beneficios">Beneficios</a>
+          <a class="hover:text-brand-600 dark:hover:text-brand-400" href="#form">Inscripción</a>
+          <a class="hover:text-brand-600 dark:hover:text-brand-400" href="#faq">FAQ</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" type="button" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-900" aria-label="Cambiar tema" aria-pressed="false">
+            <span class="sr-only">Cambiar modo claro/oscuro</span>
+            <svg id="iconSun" class="h-5 w-5 hidden dark:inline" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.45 14.32l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zm8-8h3v-1h-3v1zM1 12H4v-1H1v1zm15.24-7.16l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM4.22 18.36l-1.8 1.79 1.41 1.41 1.79-1.8-1.4-1.4zM12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+            <svg id="iconMoon" class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.64 13a9 9 0 01-11.31-11A10 10 0 1022 14.31 9.94 9.94 0 0121.64 13z"/></svg>
+            <span class="hidden sm:inline">Tema</span>
+          </button>
+          <a href="#form" class="hidden sm:inline-flex rounded-lg bg-brand-600 px-3 py-2 text-white text-sm font-medium shadow-soft hover:bg-brand-700">Inscribirme</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative isolate overflow-hidden">
+      <div class="absolute inset-0 -z-10 opacity-20 dark:opacity-30 pointer-events-none" aria-hidden="true">
+        <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-500 blur-3xl"></div>
+        <div class="absolute bottom-0 -right-24 h-72 w-72 rounded-full bg-fuchsia-500 blur-3xl"></div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Inscríbete y da el siguiente paso en tu carrera tech</h1>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">Completa el formulario para reservar tu cupo. Te contactaremos por correo y WhatsApp con los detalles de inicio, requisitos y opciones de pago.</p>
+          <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-500"></span> Clases prácticas y proyectos reales.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-500"></span> Modalidad presencial u online.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand-500"></span> Acompañamiento 1:1 y comunidad.</li>
+          </ul>
+        </div>
+
+        <!-- FORM CARD -->
+        <div id="form" class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur p-6 shadow-soft">
+          <form id="inscriptionForm" novalidate class="space-y-6">
+            <!-- datos personales -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-medium">Nombre completo</label>
+                <input id="name" name="name" type="text" required autocomplete="name" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-4 focus:ring-brand-500/20" placeholder="María Pérez" />
+                <p id="nameError" class="mt-1 hidden text-xs text-rose-500">Ingresa tu nombre (mín. 3 caracteres).</p>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium">Correo electrónico</label>
+                <input id="email" name="email" type="email" required autocomplete="email" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-4 focus:ring-brand-500/20" placeholder="maria@mail.com" />
+                <p id="emailError" class="mt-1 hidden text-xs text-rose-500">Ingresa un correo válido.</p>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div class="sm:col-span-2">
+                <label for="phone" class="block text-sm font-medium">Teléfono</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" required class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-4 focus:ring-brand-500/20" placeholder="+58 412 123 4567" />
+                <p id="phoneError" class="mt-1 hidden text-xs text-rose-500">Incluye código de país y 8–12 dígitos.</p>
+              </div>
+              <div>
+                <label for="country" class="block text-sm font-medium">País</label>
+                <select id="country" name="country" required class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-4 focus:ring-brand-500/20">
+                  <option value="">Selecciona…</option>
+                  <option selected>Venezuela</option>
+                  <option>España</option>
+                  <option>México</option>
+                  <option>Colombia</option>
+                  <option>Argentina</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- modalidad y ciudad dependiente -->
+            <fieldset class="space-y-3">
+              <legend class="text-sm font-medium">Modalidad</legend>
+              <div class="flex flex-wrap gap-4">
+                <label class="inline-flex items-center gap-2">
+                  <input type="radio" name="mode" value="presencial" class="h-4 w-4 text-brand-600" checked />
+                  <span>Presencial</span>
+                </label>
+                <label class="inline-flex items-center gap-2">
+                  <input type="radio" name="mode" value="online" class="h-4 w-4 text-brand-600" />
+                  <span>Online</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div id="cityGroup">
+              <label for="city" class="block text-sm font-medium">Ciudad (si es presencial)</label>
+              <input id="city" name="city" type="text" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 outline-none focus:ring-4 focus:ring-brand-500/20" placeholder="Punto Fijo" />
+            </div>
+
+            <!-- intereses -->
+            <fieldset class="space-y-3">
+              <legend class="text-sm font-medium">Intereses</legend>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <label class="inline-flex items-center gap-2"><input type="checkbox" name="interests" value="frontend" class="h-4 w-4 text-brand-600">Frontend</label>
+                <label class="inline-flex items-center gap-2"><input type="checkbox" name="interests" value="backend" class="h-4 w-4 text-brand-600">Backend</label>
+                <label class="inline-flex items-center gap-2"><input type="checkbox" name="interests" value="data" class="h-4 w-4 text-brand-600">Data/AI</label>
+              </div>
+            </fieldset>
+
+            <!-- disponibilidad -->
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div>
+                <label for="date" class="block text-sm font-medium">Fecha preferida</label>
+                <input id="date" type="date" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 focus:ring-4 focus:ring-brand-500/20" />
+              </div>
+              <div>
+                <label for="time" class="block text-sm font-medium">Horario</label>
+                <input id="time" type="time" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 focus:ring-4 focus:ring-brand-500/20" />
+              </div>
+              <div>
+                <label for="xp" class="block text-sm font-medium">Experiencia (0–5)</label>
+                <div class="mt-2 flex items-center gap-3">
+                  <input id="xp" type="range" min="0" max="5" value="1" class="w-full accent-brand-600" />
+                  <output id="xpOut" class="w-6 text-right tabular-nums">1</output>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="portfolio" class="block text-sm font-medium">Portafolio / GitHub (URL)</label>
+                <input id="portfolio" name="portfolio" type="url" placeholder="https://github.com/usuario" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 focus:ring-4 focus:ring-brand-500/20" />
+              </div>
+              <div>
+                <label for="cv" class="block text-sm font-medium">Adjuntar CV (PDF)</label>
+                <input id="cv" name="cv" type="file" accept="application/pdf" class="mt-1 block w-full text-sm file:mr-4 file:rounded-lg file:border-0 file:bg-brand-600 file:px-3 file:py-2 file:text-white hover:file:bg-brand-700" />
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium">Cuéntanos sobre ti</label>
+              <textarea id="message" oninput="updateMsgCount()" maxlength="280" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 focus:ring-4 focus:ring-brand-500/20" placeholder="Objetivos, experiencia, disponibilidad…"></textarea>
+              <div class="mt-1 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span id="msgCount">0/280</span>
+                <span>Consejo: sé conciso y específico</span>
+              </div>
+            </div>
+
+            <label class="flex items-start gap-2 text-sm">
+              <input id="terms" type="checkbox" class="h-4 w-4 translate-y-0.5 text-brand-600" required />
+              <span>Acepto los <a class="underline decoration-dotted hover:text-brand-600" href="#">términos y condiciones</a>.</span>
+            </label>
+
+            <div class="flex items-center gap-3 pt-2">
+              <button id="submitBtn" type="submit" class="inline-flex items-center justify-center rounded-lg bg-brand-600 px-4 py-2 text-white font-medium shadow-soft hover:bg-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/30 disabled:opacity-50 disabled:cursor-not-allowed">Enviar</button>
+              <button type="reset" class="inline-flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-700 px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-900">Limpiar</button>
+              <p id="formStatus" class="text-sm"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="border-t border-slate-200 dark:border-slate-800 py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Mentoría cercana</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Feedback 1:1 y soporte en cada etapa del proceso de aprendizaje.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Proyecto de portafolio</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Saldrás con un proyecto real para mostrar en entrevistas.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Comunidad activa</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Red de apoyo, eventos y oportunidades con otros estudiantes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="border-t border-slate-200 dark:border-slate-800 py-14">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold">Preguntas frecuentes</h2>
+        <details class="group mt-6 rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+          <summary class="cursor-pointer select-none font-medium">¿Necesito experiencia previa?</summary>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">No. Empezamos desde fundamentos y avanzamos con práctica guiada.</p>
+        </details>
+        <details class="group mt-3 rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+          <summary class="cursor-pointer select-none font-medium">¿Hay facilidades de pago?</summary>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Sí, ofrecemos cuotas mensuales y descuentos por pronto pago.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+      © <span id="year"></span> Academia CoderHub • Hecho con ♥ y flojera.
+    </footer>
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+
+      const btnToggle = document.getElementById("themeToggle");
+      const mainLogo = document.getElementById("main-logo");
+      btnToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        const isDark = document.documentElement.classList.contains("dark");
+        mainLogo.src = isDark ? "./assets/logo-dark.png" : "./assets/logo-light.png";
+      });
+
+      const updateMsgCount = () => {
+        const msgCount = document.getElementById("message").value.length;
+        document.getElementById("msgCount").innerText = `${msgCount}/280`;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica Formularios</title>
+</head>
+<body>
+  <h1>Practica Formularios</h1>
+
+  <div id="user-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo Electrónico</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <form id="myForm" onsubmit="handleSubmit(event)">
+    <label for="name">Nombre:</label>
+    <br>
+    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+    <br>
+    <label for="email">Correo electrónico:</label>
+    <br>
+    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+    <br>
+    <label for="password">Contraseña:</label>
+    <br>
+    <input type="password" id="password" name="password" onblur="handlePassBlur()" required>
+    <br>
+    <label for="message">Mensaje:</label>
+    <br>
+    <textarea id="message" name="message" rows="5" required></textarea>
+    <br>
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">Acepto los términos y condiciones</label>
+    <br>
+    <p id="clickable-text" onmouseup="mouseUp()" onmousedown="mouseDown()" class="clickable-text">Click the text!</p>
+    <br>
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Resetear">
+  </form>
+  <script>
+    function handlePassBlur() {
+      const passwordField = document.getElementById("password");
+
+      if (passwordField.value.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres.");
+      }
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+
+      console.log("name obtenido con metodo", name);
+
+      console.log("name", e.target.name.value);
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      console.log('Formulario Enviado', data);
+
+      const userTable = document.querySelector('#user-table tbody');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `<td>${data.name}</td><td>${data.email}</td>`;
+      userTable.appendChild(newRow);
+    }
+
+    function mouseUp() {
+      p_item = document.getElementById("clickable-text");
+      p_item.setAttribute("style", "color: red;");
+    }
+
+    function mouseDown() {
+      p_item = document.getElementById("clickable-text");
+      p_item.setAttribute("style", "color: black;");
+    }
+  </script>
+</body>
+</html>
