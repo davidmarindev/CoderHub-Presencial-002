@@ -43,6 +43,77 @@ class CuentaBancaria:
         return self.__saldo
       
   # Metodos privados
-
     def __calcular_interes(self, tasa):
-        return self.__saldo * tasa / 100
+        return self.__saldo * tasa
+
+
+class Cocktail:
+    def __init__(self, nombre, base, modificador, precio, ingredientes):
+        self.nombre = nombre
+        self.base = base
+        self.modificador = modificador
+        self.precio = precio
+        self.ingredientes = ingredientes
+
+    def mezclar(self):
+        return f"Mezclando los ingredientes para el cóctel {self.nombre}: {', '.join(self.ingredientes)}"
+    
+    def mostrar_receta(self):
+        return f"Receta del cóctel {self.nombre}:\nBase: {self.base}\nModificador: {self.modificador}\nPrecio: ${self.precio}\nIngredientes: {', '.join(self.ingredientes)}"
+
+class CocktailAlcoholico(Cocktail):
+    def __init__(self, nombre, base, modificador, precio, ingredientes, grado_alcohol):
+        super().__init__(nombre, base, modificador, precio, ingredientes)
+        self.grado_alcohol = grado_alcohol
+
+    def servir(self):
+        return f"Sirviendo el cóctel alcohólico {self.nombre} con {self.grado_alcohol}% de alcohol."
+    
+    def indicar_grado_alcohol(self):
+        return f"El cóctel {self.nombre} tiene un grado de alcohol de {self.grado_alcohol}%."
+    
+class CocktailSinAlcohol(Cocktail):
+    def __init__(self, nombre, base, modificador, precio, ingredientes, ingrediente_especial):
+        super().__init__(nombre, base, modificador, precio, ingredientes)
+        self.ingrediente_especial = ingrediente_especial
+
+    def servir(self):
+        return f"Sirviendo el cóctel sin alcohol {self.nombre}."
+
+    def indicar_ingrediente_especial(self):
+        return f"El cóctel {self.nombre} tiene como ingrediente especial {self.ingrediente_especial}."
+    
+
+mojito = CocktailAlcoholico(
+    nombre="Mojito",
+    base="Ron",
+    modificador="Azúcar",
+    precio=8.50,
+    ingredientes=["Ron", "Azúcar", "Lima", "Hierbabuena", "Soda"],
+    grado_alcohol=13
+)
+
+pina_colada = CocktailSinAlcohol(
+    nombre="Piña Colada",
+    base="Jugo de Piña",
+    modificador="Crema de Coco",
+    precio=7.00,
+    ingredientes=["Jugo de Piña", "Crema de Coco", "Hielo", "Azúcar", "Leche Condensada"],
+    ingrediente_especial="Crema de Coco"
+)
+
+print(mojito.nombre)
+print(pina_colada.nombre)
+
+print(pina_colada.mostrar_receta())
+print(mojito.mostrar_receta())
+
+print(mojito.indicar_grado_alcohol())
+
+print(type("Hola"))
+print(type(123))
+print(type(mojito))
+
+print(isinstance(mojito, Cocktail))
+print(isinstance(pina_colada, CocktailAlcoholico))
+print(isinstance(pina_colada, Cocktail))

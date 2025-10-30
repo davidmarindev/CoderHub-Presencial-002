@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login CoderHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <section class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
+      <h1 class="text-2xl font-bold text-center">Iniciar sesión</h1>
+      <form id="loginForm" novalidate class="space-y-4" onsubmit="handleSubmit(event)">
+        <div>
+          <label for="email" class="block text-sm font-medium">Correo electrónico</label>
+          <input id="email" name="email" type="email" required autocomplete="email" class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-4 focus:ring-brand-500/20" placeholder="maria@mail.com" />
+          <p id="emailError" class="mt-1 hidden text-xs text-rose-500">Ingresa un correo válido.</p>
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium">Contraseña</label>
+          <input id="password" name="password" type="password" required autocomplete="current-password" class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-4 focus:ring-brand-500/20" placeholder="••••••••" />
+          <p id="passwordError" class="mt-1 hidden text-xs text-rose-500">Ingresa una contraseña válida.</p>
+        </div>
+        <p id="userNotFound" class="mt-1 hidden text-xs text-rose-500">Usuario no encontrado.</p>
+        <button type="submit" class="w-full rounded-lg bg-indigo-500 bg-brand-600 px-4 py-2 text-white font-semibold shadow-md hover:bg-brand-700">Iniciar sesión</button>
+      </form>
+    </div>
+  </section>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      if (!email || !password) {
+        if (!email) {
+          document.getElementById("emailError").classList.remove("hidden");
+        }
+        if (!password) {
+          document.getElementById("passwordError").classList.remove("hidden");
+        }
+        return;
+      }
+
+      const users = localStorage.getItem("usersCoderHub");
+      const parsedUsers = users ? JSON.parse(users) : [];
+
+      const usuario = parsedUsers.find(user => user.email === email && user.password == password);
+      if (usuario) {
+        localStorage.setItem("currentUser", JSON.stringify(usuario));
+        window.location.replace("http://127.0.0.1:5500/Modulo2/Javascript/DOM/Clase3/home.html");
+      } else {
+        document.getElementById("userNotFound").classList.remove("hidden");
+        return;
+      }
+    }
+  </script>
+</body>
+</html>
