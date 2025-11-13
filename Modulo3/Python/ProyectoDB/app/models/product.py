@@ -11,7 +11,7 @@ class Product:
         self.active = active
 
     def __repr__(self):
-        return f"Product(id={self.id}, sku={self.sku}, name='{self.name}', price={self.price})"
+        return f"Product(id={self.id}, sku={self.sku}, name='{self.name}', price={self.price}, cost_price={self.cost_price}, current_stock={self.current_stock})"
 
     # Leer productos desde la base de datos
     # Crear producto
@@ -71,5 +71,22 @@ class Product:
         conn.commit()
         
         print(f"Producto con ID {product_id} eliminado.")
+        
+    @classmethod
+    def search_by_attribute(cls, conn, attribute, value):
+        cursor = conn.cursor()
+        query = f"SELECT * FROM products WHERE {attribute} = ?"
+        cursor.execute(query, (value,))
+        rows = cursor.fetchall()
+        products = [cls(*row) for row in rows]
+
+        return products
 
     # Metodos de instancia
+    
+    def calculate_margin(self):
+        if self.cost_price == 0:
+            return 0
+        margin = ((self.price - self.cost_price) / self.cost_price) * 100
+
+        return margin

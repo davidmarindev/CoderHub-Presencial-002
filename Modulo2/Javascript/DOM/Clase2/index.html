@@ -8,6 +8,18 @@
     <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      window.onload = () => {
+        const theme = localStorage.getItem("theme");
+        const mainLogo = document.getElementById("main-logo");
+        console.log("tema guardado:", theme);
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+          mainLogo.src = "./assets/logo-dark.png";
+        } else {
+          document.documentElement.classList.remove("dark");
+          mainLogo.src = "./assets/logo-light.png";
+        }
+      };
       tailwind.config = {
         darkMode: 'class',
         theme: {
@@ -241,6 +253,7 @@
       btnToggle.addEventListener("click", () => {
         document.documentElement.classList.toggle("dark");
         const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
         mainLogo.src = isDark ? "./assets/logo-dark.png" : "./assets/logo-light.png";
       });
 

@@ -1,5 +1,8 @@
 from db import create_connection
 from models.product import Product
+from models.order import Order
+from models.order_item import OrderItem
+from models.customer import Customer
 
 def main():
     conn = create_connection()
@@ -36,8 +39,9 @@ def main():
                 print("3. Agregar producto")
                 print("4. Actualizar producto")
                 print("5. Eliminar producto")
-                print("6. Volver al menú principal")
-                
+                print("6. Calcular margen de producto")
+                print("7. Volver al menú principal")
+
                 product_option = input("Seleccione una opción de productos: ")
                 print()
                 
@@ -81,11 +85,41 @@ def main():
                         else:
                             Product.delete(conn, id)
                     case "6":
+                        id = input("Ingrese el ID del producto para calcular el margen: ")
+                        product = Product.find(conn, id)
+                        if product:
+                            margin = product.calculate_margin()
+                            print(f"El margen de ganancia del producto es: {margin}%")
+                        else:
+                            print("Producto no encontrado.")
+                    case "7":
+                        print("Volviendo al menú principal...")
                         continue
                     case _:
                         print("Opción no válida en el módulo de Productos.")
             case "2":
                 print("Accediendo al módulo de Ventas...")
+                print("1. Listar ordenes de venta")
+                print("2. Buscar orden de venta por ID")
+                print("3. Crear nueva orden de venta")
+                
+                order_option = input("Seleccione una opción de ventas: ")
+                print()
+                match order_option:
+                    case "1":
+                        print("Listando ordenes de venta...")
+                    case "2":
+                        print("Buscando orden de venta por ID...")
+                    case "3":
+                        print("Creando nueva orden de venta...")
+                        customer_doc = input("Ingrese el número de documento del cliente: ")
+                        customer = Customer.find_or_create(conn, customer_doc)
+                        
+                        order = Order.new(customer.id)
+                        order_items = []
+                        print("Order created:", order)
+                    case _:
+                        print("Opción no válida en el módulo de Ventas.")
             case "3":
                 print("Accediendo al módulo de Compras...")
             case "4":
@@ -94,6 +128,21 @@ def main():
                 print("Accediendo al módulo de Categorias...")
             case "6":
                 print("Accediendo al módulo de Clientes...")
+                print("1. Listar clientes")
+                print("2. Buscar cliente por ID")
+                print("3. Crear nuevo cliente")
+                
+                customer_option = input("Seleccione una opción de clientes: ")
+                print()
+                match customer_option:
+                    case "1":
+                        Customer.all(conn)
+                    case "2":
+                        print("Buscando cliente por ID...")
+                    case "3":
+                      print("Creando nuevo cliente...")
+                    case _:
+                        print("Opción no válida en el módulo de Clientes.")
             case "7":
                 print("Saliendo del sistema. ¡Hasta luego!")
                 break
