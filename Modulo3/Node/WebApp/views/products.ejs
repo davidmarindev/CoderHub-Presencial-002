@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <style>
+    img {
+      max-width: 200px;
+      height: auto;
+    }
+    .title {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    li {
+      list-style: none;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <h1 class="title"><%= title %></h1>
+  <div class="container">
+      <ul class="grid">
+    <% products.forEach(product => { %>
+      <a href="/producto/<%= product.ProductID %>">
+        <li>
+          <h2><%= product.ProductName %></h2>
+          <p>Precio: $<%= product.UnitPrice %></p>
+          <p>Stock: Quedan <%= product.UnitsInStock %> unidades</p>
+          <img src="https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg" alt="<%= product.ProductName %>">
+        </li>
+      </a>
+    <% }) %>
+  </ul>
+  </div>
+</body>
+</html>

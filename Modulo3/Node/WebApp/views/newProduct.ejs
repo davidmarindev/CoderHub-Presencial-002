@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+  }
+  label {
+    margin-top: 10px;
+  }
+  input {
+    padding: 5px;
+    font-size: 1rem;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+</style>
+<body>
+  <h1 class="title"><%= title %></h1>
+  <form action="/producto" method="POST">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="price">Precio:</label>
+    <input type="number" id="price" name="price" required>
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" required>
+    <label for="categoryId">CategoryID:</label>
+    <input type="number" id="categoryId" name="categoryId" required>
+    <label for="supplierId">SupplierID:</label>
+    <input type="number" id="supplierId" name="supplierId" required>
+    <label for="quantityPerUnit">Cantidad por Paquete:</label>
+    <input type="text" id="quantityPerUnit" name="quantityPerUnit" required>
+    <label for="unitsOnOrder">Unidades de la Orden:</label>
+    <input type="number" id="unitsOnOrder" name="unitsOnOrder" required>
+    <button type="submit">Agregar Producto</button>
+  </form>
+</body>
+</html>

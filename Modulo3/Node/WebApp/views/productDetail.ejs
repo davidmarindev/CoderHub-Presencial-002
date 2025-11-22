@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Producto - <%= product.ProductName %></title>
+</head>
+<body>
+  <h1><%= product.ProductName %></h1>
+  <p>Precio: $<%= product.UnitPrice %></p>
+  <p>Categoría: <%= product.CategoryID %></p>
+  <p>Stock Disponible: <%= product.UnitsInStock %> unidades</p>
+  <p>Cantidad por Paquete: <%= product.QuantityPerUnit %></p>
+  <p>Proveedor: <%= product.SupplierID %></p>
+</body>
+</html>
