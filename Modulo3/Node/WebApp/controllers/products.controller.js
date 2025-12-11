@@ -36,6 +36,7 @@ exports.getProductById = (req, res) => {
 exports.newProductForm = (req, res) => {
   res.render("newProduct", {
     title: "Agregar Nuevo Producto",
+    product: null,
   });
 };
 

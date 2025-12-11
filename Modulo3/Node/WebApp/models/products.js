@@ -64,6 +64,52 @@ class Product {
       );
     });
   }
+
+  static updateById(id, productData) {
+    return new Promise((resolve, reject) => {
+      const {
+        name,
+        price,
+        stock,
+        categoryId,
+        supplierId,
+        quantityPerUnit,
+        unitsOnOrder,
+      } = productData;
+      db.run(
+        "UPDATE Products SET ProductName = ?, UnitPrice = ?, UnitsInStock = ?, CategoryID = ?, SupplierID = ?, QuantityPerUnit = ?, UnitsOnOrder = ? WHERE ProductID = ?",
+        [
+          name,
+          price,
+          stock,
+          categoryId,
+          supplierId,
+          quantityPerUnit,
+          unitsOnOrder,
+          id,
+        ],
+        function (err) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        }
+      );
+    });
+  }
+
+  static deleteById(id) {
+    return new Promise((resolve, reject) => {
+      db.run("DELETE FROM Products WHERE ProductID = ?", [id], function (err) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
 }
 
 module.exports = Product;

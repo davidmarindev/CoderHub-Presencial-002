@@ -1,0 +1,14 @@
+Api Rest
+
+- Funciona con los metodos de HTTP
+- Definimos un formato de respuesta que entienda tanto el servidor como el cliente
+- Definimos los endpoints(Rutas) existentes y les asociamos una funcionalidad
+- Formatos posibles JSON, HTML, XML, Python, etc.
+- Podemos utilizar parametros y encabezados para complementar los datos de las peticiones.
+
+Flujo:
+
+- Cliente envia una peticion al servidor por medio de un endpoint previamente definido
+- Servidor recibe la peticion, valida la existencia del endpoint, procesa la peticion 
+y devuelve la respuesta.
+- Cliente recibe la respuesta y renderiza los datos.

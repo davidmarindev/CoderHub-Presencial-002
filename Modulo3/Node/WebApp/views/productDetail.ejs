@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle de Producto - <%= product.ProductName %></title>
+  <%- include('partials/head') %>
 </head>
 <body>
-  <h1><%= product.ProductName %></h1>
-  <p>Precio: $<%= product.UnitPrice %></p>
-  <p>Categoría: <%= product.CategoryID %></p>
-  <p>Stock Disponible: <%= product.UnitsInStock %> unidades</p>
-  <p>Cantidad por Paquete: <%= product.QuantityPerUnit %></p>
-  <p>Proveedor: <%= product.SupplierID %></p>
+  <%- include('partials/navbar') %>
+
+  <div class="container">
+    <div class="card mb-3 mx-auto" style="max-width: 800px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://dummyimage.com/400x600/dee2e6/6c757d.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="card-title"><%= product.ProductName %></h2>
+            <h4 class="text-success mb-3">$<%= product.UnitPrice %></h4>
+            
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item"><strong>Categoría ID:</strong> <%= product.CategoryID %></li>
+              <li class="list-group-item"><strong>Stock Disponible:</strong> <%= product.UnitsInStock %></li>
+              <li class="list-group-item"><strong>Por Paquete:</strong> <%= product.QuantityPerUnit %></li>
+              <li class="list-group-item"><strong>Proveedor ID:</strong> <%= product.SupplierID %></li>
+            </ul>
+
+            <a href="/catalogo" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Volver</a>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

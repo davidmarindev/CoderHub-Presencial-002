@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Desarrollador Web Junior</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Dev<span>Junior</span>.</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto" class="btn-primary">Contáctame</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container hero-content">
+                <p class="hero-subtitle">Hola, soy un Desarrollador en formación</p>
+                <h1 class="hero-title">Construyendo soluciones con <span class="highlight">Código y Lógica</span></h1>
+                <p class="hero-description">
+                    Llevo 8 meses sumergiéndome en el mundo del desarrollo. Especializándome en Python, JavaScript y SQL. Buscando mi primera oportunidad para aportar y seguir creciendo.
+                </p>
+                <div class="hero-btns">
+                    <a href="#proyectos" class="btn">Ver Proyectos</a>
+                    <a href="https://github.com/TU_USUARIO" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="section">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre mí</h2>
+                    <p>Soy un apasionado por la tecnología que decidió dar un giro profesional hace 8 meses. Aunque estoy en etapa Junior/Trainee, he desarrollado una base sólida en lógica de programación.</p>
+                    <p>Me enfoco en escribir código limpio y entender el "por qué" de las cosas antes de usar frameworks.</p>
+                    
+                    <div class="roadmap-box">
+                        <h3>🚀 Próximos Pasos (Learning Path)</h3>
+                        <p>Actualmente estoy profundizando en:</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> React.js (Componentes y Hooks)</li>
+                            <li><i class="fas fa-database"></i> ORMs (Sequelize) & Bases de datos relacionales</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="skills-container">
+                    <h3>Mis Herramientas</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+                        <span class="skill-tag"><i class="fab fa-node"></i> Node.js</span>
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Mis Proyectos</h2>
+                <div class="projects-grid">
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/222/fff?text=API+Node+Express" alt="API Node">
+                        </div>
+                        <div class="project-info">
+                            <h3>API RESTful con Node & Express</h3>
+                            <p>Backend funcional que permite operaciones CRUD. Estructurado bajo arquitectura MVC.</p>
+                            <div class="project-tech">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Código</a>
+                                </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/222/fff?text=Inventario+Python" alt="Sistema Python">
+                        </div>
+                        <div class="project-info">
+                            <h3>Sistema de Inventario</h3>
+                            <p>Aplicación de consola para gestión de productos. Aplica lógica de control de flujo y estructuras de datos.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>SQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/222/fff?text=Web+Interactiva" alt="Web DOM">
+                        </div>
+                        <div class="project-info">
+                            <h3>Landing Page Interactiva</h3>
+                            <p>Sitio web responsive con manipulación del DOM nativo para interactividad sin frameworks.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Código</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto" class="footer">
+        <div class="container footer-content">
+            <h2>¿Hablamos?</h2>
+            <p>Estoy disponible para puestos Junior o Trainee.</p>
+            <div class="social-links">
+                <a href="mailto:tuemail@ejemplo.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/tu-perfil" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/TU_USUARIO" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2024 Creado por Mí.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

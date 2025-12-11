@@ -1,60 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
+  <%- include('partials/head') %>
 </head>
-<style>
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 0 auto;
-  }
-  label {
-    margin-top: 10px;
-  }
-  input {
-    padding: 5px;
-    font-size: 1rem;
-  }
-  button {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #45a049;
-  }
-  .title {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-</style>
-<body>
-  <h1 class="title"><%= title %></h1>
-  <form action="/producto" method="POST">
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="price">Precio:</label>
-    <input type="number" id="price" name="price" required>
-    <label for="stock">Stock:</label>
-    <input type="number" id="stock" name="stock" required>
-    <label for="categoryId">CategoryID:</label>
-    <input type="number" id="categoryId" name="categoryId" required>
-    <label for="supplierId">SupplierID:</label>
-    <input type="number" id="supplierId" name="supplierId" required>
-    <label for="quantityPerUnit">Cantidad por Paquete:</label>
-    <input type="text" id="quantityPerUnit" name="quantityPerUnit" required>
-    <label for="unitsOnOrder">Unidades de la Orden:</label>
-    <input type="number" id="unitsOnOrder" name="unitsOnOrder" required>
-    <button type="submit">Agregar Producto</button>
-  </form>
+<body class="bg-light">
+  <%- include('partials/navbar') %>
+
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-primary text-white py-3">
+            <h4 class="card-title mb-0 text-center"><i class="bi bi-box-seam me-2"></i><%= title %></h4>
+          </div>
+          
+          <div class="card-body p-4">
+          <% if(product) { %>
+            <form action="/admin/productos/editar/<%= product.ProductID %>" method="POST" class="needs-validation">
+          <% } else { %>
+            <form action="/nuevo-producto" method="POST" class="needs-validation">
+          <% } %>
+              
+              <div class="mb-3">
+                <label for="name" class="form-label fw-bold">Nombre del Producto</label>
+                <input type="text" value="<%= product ? product.ProductName : '' %>" class="form-control" id="name" name="name" placeholder="Ej: Té Chai" required>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="price" class="form-label fw-bold">Precio Unitario</label>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" value="<%= product ? product.UnitPrice : '' %>" step="0.01" class="form-control" id="price" name="price" placeholder="0.00" required>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="stock" class="form-label fw-bold">Stock Actual</label>
+                  <input type="number" value="<%= product ? product.UnitsInStock : '' %>" class="form-control" id="stock" name="stock" placeholder="0" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="categoryId" class="form-label">ID Categoría</label>
+                  <input type="number" value="<%= product ? product.CategoryID : '' %>" class="form-control" id="categoryId" name="categoryId" required>
+                  <div class="form-text text-muted small">Numérico (Ej: 1)</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="supplierId" class="form-label">ID Proveedor</label>
+                  <input type="number" value="<%= product ? product.SupplierID : '' %>" class="form-control" id="supplierId" name="supplierId" required>
+                  <div class="form-text text-muted small">Numérico (Ej: 1)</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="quantityPerUnit" class="form-label">Cantidad por Paquete</label>
+                  <input type="text" value="<%= product ? product.QuantityPerUnit : '' %>" class="form-control" id="quantityPerUnit" name="quantityPerUnit" placeholder="Ej: 10 cajas x 20 bolsas" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="unitsOnOrder" class="form-label">Unidades en Orden</label>
+                  <input type="number" value="<%= product ? product.UnitsOnOrder : 0 %>" class="form-control" id="unitsOnOrder" name="unitsOnOrder" required>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="/catalogo" class="btn btn-secondary me-md-2" type="button">Cancelar</a>
+                <button type="submit" class="btn btn-success btn-lg">
+                  <i class="bi bi-save"></i> Guardar Producto
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

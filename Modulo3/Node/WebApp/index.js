@@ -3,6 +3,7 @@ const app = express();
 const path = require("node:path");
 const port = 3000;
 const ProductController = require("./controllers/products.controller.js");
+const AdminProductController = require("./controllers/admin/products.controller.js");
 const db = require("./db.js");
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -24,6 +25,17 @@ app.get("/catalogo", ProductController.getAllProducts);
 app.get("/producto/:id", ProductController.getProductById);
 app.get("/nuevo-producto", ProductController.newProductForm);
 app.post("/producto", ProductController.createNewProduct);
+app.get("/admin/dashboard", (req, res) => {
+  res.render("admin/dashboard", {
+    title: "Admin Dashboard",
+    productsCount: 100,
+    totalValue: 5000,
+  });
+});
+app.get("/admin/productos", AdminProductController.getAllProducts);
+app.get("/admin/productos/editar/:id", AdminProductController.editProduct);
+app.post("/admin/productos/editar/:id", AdminProductController.updateProduct);
+app.post("/admin/productos/eliminar/:id", AdminProductController.deleteProduct);
 
 // Validar la conexión a la base de datos
 

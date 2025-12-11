@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head', { title: 'Gestionar Productos' }) %>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <%- include('sidebar') %>
+            <div class="col py-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3>Inventario de Productos</h3>
+                    <a href="/nuevo-producto" class="btn btn-success"><i class="bi-plus-lg"></i> Nuevo</a>
+                </div>
+                
+                <div class="card shadow-sm">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th>Stock</th>
+                                        <th>Categoría</th>
+                                        <th class="text-end">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% products.forEach(product => { %>
+                                    <tr>
+                                        <td><%= product.ProductID %></td>
+                                        <td><%= product.ProductName %></td>
+                                        <td>$<%= product.UnitPrice %></td>
+                                        <td>
+                                            <% if(product.UnitsInStock < 10) { %>
+                                                <span class="badge bg-danger"><%= product.UnitsInStock %></span>
+                                            <% } else { %>
+                                                <span class="badge bg-success"><%= product.UnitsInStock %></span>
+                                            <% } %>
+                                        </td>
+                                        <td><%= product.CategoryID %></td>
+                                        <td class="text-end">
+                                            <a href="/producto/<%= product.ProductID %>" class="btn btn-sm btn-info text-white"><i class="bi-eye"></i></a>
+                                            <a href="/admin/productos/editar/<%= product.ProductID %>" class="btn btn-sm btn-warning"><i class="bi-pencil"></i></a>
+                                            <a class="btn btn-sm btn-danger" href="" onclick="event.preventDefault(); document.getElementById('delete-form-<%= product.ProductID %>').submit();"><i class="bi-trash"></i></a>
+                                            <form id="delete-form-<%= product.ProductID %>" action="/admin/productos/eliminar/<%= product.ProductID %>" method="POST" class="d-none">
+                                                <input type="hidden" name="_method" value="DELETE">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
